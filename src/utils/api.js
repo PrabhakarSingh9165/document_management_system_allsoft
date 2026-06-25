@@ -17,3 +17,11 @@ export const generateOTP = (mobile_number) =>
 export const validateOTP = (mobile_number, otp) =>
   api.post('/validateOTP', { mobile_number, otp })
 
+export const uploadDocument = (formData) =>
+  api.post('/saveDocumentEntry', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  })
+
+export const getDocumentTags = (term = '') =>
+  api.post('/documentTags', { term })
+
