@@ -15,6 +15,54 @@
 
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; font-size: 15px; }
 
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Card */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+
+/* Form */
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.form-control {
+  background: var(--input); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); font-family: inherit; font-size: 0.9rem;
+  padding: 0.6rem 0.85rem; width: 100%; outline: none;
+}
+.form-control:focus { border-color: var(--accent); }
+.form-control::placeholder { color: #555a75; }
+.form-control:disabled { opacity: 0.5; cursor: not-allowed; }
+select.form-control { cursor: pointer; }
+select.form-control option { background: var(--card); }
+textarea.form-control { resize: vertical; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  border: none; border-radius: 6px; cursor: pointer; font-family: inherit;
+  font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1.2rem;
+  transition: opacity 0.15s; text-decoration: none; white-space: nowrap;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover:not(:disabled) { opacity: 0.88; }
+.btn-secondary { background: var(--input); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover:not(:disabled) { border-color: var(--accent); }
+.btn-danger { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); }
+.btn-sm { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+.w-full { width: 100%; }
+
+/* Tag chip */
+.tag {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(79,110,247,0.12); border: 1px solid rgba(79,110,247,0.25);
+  border-radius: 100px; color: #7b93f9; font-size: 0.75rem; padding: 0.15rem 0.6rem;
+}
+.tag-remove { background: none; border: none; color: #7b93f9; cursor: pointer; font-size: 1rem; line-height: 1; padding: 0; }
+
+/* Spinner */
+.spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.2); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
 /* Navbar */
 .navbar { background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
 .navbar-inner { display: flex; align-items: center; height: 56px; justify-content: space-between; }
@@ -23,3 +71,27 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .navbar-nav { display: flex; gap: 0.25rem; }
 .nav-link { border-radius: 6px; color: var(--muted); font-size: 0.875rem; font-weight: 500; padding: 0.4rem 0.8rem; text-decoration: none; }
 .nav-link:hover, .nav-link.active { background: rgba(79,110,247,0.1); color: var(--accent); }
+
+/* OTP inputs */
+.otp-inputs { display: flex; gap: 0.5rem; justify-content: center; }
+.otp-input { background: var(--input); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 1.4rem; font-weight: 700; height: 52px; outline: none; text-align: center; width: 48px; }
+.otp-input:focus { border-color: var(--accent); }
+
+/* Auth */
+.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.auth-card { max-width: 420px; width: 100%; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+th { background: var(--input); color: var(--muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.7rem 1rem; text-align: left; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+td { border-bottom: 1px solid var(--border); padding: 0.8rem 1rem; vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+
+/* Grid helpers */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+@media (max-width: 640px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .navbar-nav { display: none; }
+}
