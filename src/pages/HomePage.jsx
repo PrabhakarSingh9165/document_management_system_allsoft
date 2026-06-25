@@ -9,7 +9,7 @@ export default function HomePage() {
       <Navbar />
       <div className="container" style={{ paddingTop: '2.5rem' }}>
         <h1 style={{ fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>Dashboard</h1>
-        <p style={{ color: 'var(--muted)', marginBottom: '2rem' }}>Welcome to DocVault — upload, search and manage documents.</p>
+        <p style={{ color: 'var(--muted)', marginBottom: '2rem' }}>Welcome to Document Management System — upload, search and manage documents.</p>
 
         <div className="grid-2" style={{ maxWidth: 600 }}>
           <div className="card" style={{ cursor: 'pointer' }} onClick={() => navigate('/upload')}>

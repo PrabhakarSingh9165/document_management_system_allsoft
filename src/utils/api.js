@@ -25,3 +25,6 @@ export const uploadDocument = (formData) =>
 export const getDocumentTags = (term = '') =>
   api.post('/documentTags', { term })
 
+export const searchDocuments = (payload) =>
+  api.post('/searchDocumentEntry', payload)
+
