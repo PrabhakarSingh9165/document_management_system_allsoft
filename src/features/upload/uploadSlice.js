@@ -50,7 +50,7 @@ const uploadSlice = createSlice({
       .addCase(fetchTags.pending, (state) => { state.tagsLoading = true })
       .addCase(fetchTags.fulfilled, (state, action) => {
         state.tagsLoading = false
-        state.tags = action.payload
+        state.tags = action.payload.map(t => t.label || t.tag_name || t).filter(t => typeof t === 'string')
       })
       .addCase(fetchTags.rejected, (state) => { state.tagsLoading = false })
       .addCase(submitUpload.pending, (state) => { state.loading = true; state.error = null; state.success = false })

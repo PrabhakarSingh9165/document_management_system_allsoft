@@ -54,15 +54,11 @@ const authSlice = createSlice({
       .addCase(sendOTP.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
-        // For demo/dev: still move to OTP step even if API fails
-        state.otpSent = true
-        state.step = 'otp'
       })
       .addCase(verifyOTP.pending, (state) => { state.loading = true; state.error = null })
       .addCase(verifyOTP.fulfilled, (state, action) => {
         state.loading = false
-        // Token may come as action.payload.token or action.payload.data.token
-        const token = action.payload?.token || action.payload?.data?.token || 'demo_token_' + Date.now()
+        const token = action.payload?.token || action.payload?.data?.token
         state.token = token
         state.step = 'done'
         localStorage.setItem('doc_token', token)
@@ -71,11 +67,6 @@ const authSlice = createSlice({
       .addCase(verifyOTP.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
-        // For demo: accept any OTP
-        const token = 'demo_token_' + Date.now()
-        state.token = token
-        state.step = 'done'
-        localStorage.setItem('doc_token', token)
       })
   },
 })

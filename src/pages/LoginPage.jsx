@@ -77,14 +77,6 @@ export default function LoginPage() {
             <button className="btn btn-primary w-full" type="submit" disabled={loading}>
               {loading ? <><span className="spinner" /> Sending…</> : 'Send OTP'}
             </button>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '1rem 0' }}>
-              <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
-              <span style={{ color: 'var(--muted)', fontSize: '0.75rem' }}>local dev only</span>
-              <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
-            </div>
-            <button type="button" className="btn btn-secondary w-full" style={{ fontSize: '0.82rem' }} onClick={() => dispatch(skipLogin())}>
-              Skip Login (Dev Mode)
-            </button>
           </form>
         )}
 
