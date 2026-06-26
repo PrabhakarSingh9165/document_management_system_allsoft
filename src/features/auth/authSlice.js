@@ -29,7 +29,7 @@ const authSlice = createSlice({
     otpSent: false,
     loading: false,
     error: null,
-    step: stored ? 'done' : 'mobile', // mobile | otp | done
+    step: stored ? 'done' : 'mobile',
   },
   reducers: {
     logout(state) {

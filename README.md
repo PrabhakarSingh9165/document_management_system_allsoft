@@ -1,4 +1,10 @@
 ```bash
+
+# Steps to run the application
+
+# Clone the repo
+
+
 # Install dependencies
 npm install
 

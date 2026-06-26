@@ -61,8 +61,7 @@ export default function LoginPage() {
     <div className="auth-page">
       <div className="auth-card card">
         <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
-          <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>Doc<span style={{ color: 'var(--accent)' }}>Vault</span></div>
-          <p style={{ color: 'var(--muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>Document Management System</p>
+          <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>Document<span style={{ color: 'var(--accent)' }}>Management System</span></div>
         </div>
 
         {step === 'mobile' && (
